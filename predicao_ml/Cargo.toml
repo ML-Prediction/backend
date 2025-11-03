@@ -1,0 +1,15 @@
+[package]
+name = "sistema_permissoes"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rusqlite = { version = "0.31.0", features = ["bundled"] }
+bcrypt = "0.15.1"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+csv = "1.1"
+reqwest = { version = "0.12", features = ["json"] }
+chrono = { version = "0.4", features = ["serde"] }
+dotenv = "0.15.0"

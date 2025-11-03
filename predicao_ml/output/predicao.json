@@ -1,0 +1,50 @@
+{
+  "tipos_lixo": [
+    "plastico",
+    "metal",
+    "vidro",
+    "plastico",
+    "papel",
+    "plastico",
+    "vidro",
+    "vidro",
+    "metal",
+    "plastico",
+    "papel",
+    "papel",
+    "plastico"
+  ],
+  "quantidades": [
+    23.0,
+    123.0,
+    345.0,
+    1234.0,
+    2.0,
+    123.0,
+    12.0,
+    34.0,
+    2345.0,
+    20.0,
+    50.0,
+    10.0,
+    20.0
+  ],
+  "resultados": [
+    27.6,
+    147.6,
+    414.00003,
+    1480.8,
+    2.4,
+    147.6,
+    14.400001,
+    40.800003,
+    2814.0,
+    24.0,
+    60.000004,
+    12.0,
+    24.0
+  ],
+  "impacto_total": 5209.2,
+  "timestamp": "2025-11-01T18:16:24.711388300+00:00",
+  "modelo": "ModeloSimuladoReciclagem"
+}
