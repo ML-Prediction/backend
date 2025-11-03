@@ -1,0 +1,82 @@
+{
+  "entries": [
+    {
+      "tipo": "plastico",
+      "quantidade": 23.0,
+      "observacoes": null,
+      "timestamp": "2025-10-31T23:17:26.520615560Z"
+    },
+    {
+      "tipo": "metal",
+      "quantidade": 123.0,
+      "observacoes": "fudido",
+      "timestamp": "2025-10-31T23:58:19.944997851Z"
+    },
+    {
+      "tipo": "vidro",
+      "quantidade": 345.0,
+      "observacoes": "livoafn",
+      "timestamp": "2025-11-01T00:06:34.998224734Z"
+    },
+    {
+      "tipo": "plastico",
+      "quantidade": 1234.0,
+      "observacoes": "gostozo",
+      "timestamp": "2025-11-01T01:01:54.756316531Z"
+    },
+    {
+      "tipo": "papel",
+      "quantidade": 2.0,
+      "observacoes": "glaubwer",
+      "timestamp": "2025-11-01T01:45:44.779377383Z"
+    },
+    {
+      "tipo": "plastico",
+      "quantidade": 123.0,
+      "observacoes": "puro",
+      "timestamp": "2025-11-01T02:15:18.373826149Z"
+    },
+    {
+      "tipo": "vidro",
+      "quantidade": 12.0,
+      "observacoes": "cru",
+      "timestamp": "2025-11-01T02:21:45.333659775Z"
+    },
+    {
+      "tipo": "vidro",
+      "quantidade": 34.0,
+      "observacoes": "limpo",
+      "timestamp": "2025-11-01T02:24:00.992773189Z"
+    },
+    {
+      "tipo": "metal",
+      "quantidade": 2345.0,
+      "observacoes": "feio",
+      "timestamp": "2025-11-01T02:33:51.024667540Z"
+    },
+    {
+      "tipo": "plastico",
+      "quantidade": 20.0,
+      "observacoes": null,
+      "timestamp": "2025-11-01T16:58:04.190990Z"
+    },
+    {
+      "tipo": "papel",
+      "quantidade": 50.0,
+      "observacoes": null,
+      "timestamp": "2025-11-01T16:58:41.620862200Z"
+    },
+    {
+      "tipo": "papel",
+      "quantidade": 10.0,
+      "observacoes": "novo",
+      "timestamp": "2025-11-01T18:15:39.883448200Z"
+    },
+    {
+      "tipo": "plastico",
+      "quantidade": 20.0,
+      "observacoes": null,
+      "timestamp": "2025-11-01T18:16:24.707608100Z"
+    }
+  ]
+}

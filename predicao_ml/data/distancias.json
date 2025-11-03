@@ -1,0 +1,34 @@
+{
+  "ponto_A": {
+    "garagem": 5.2,
+    "ponto_C": 10.8,
+    "ponto_B": 3.0
+  },
+  "predo": {
+    "predou": 456.0
+  },
+  "ponto_C": {
+    "ponto_B": 4.4,
+    "ponto_A": 10.8,
+    "garagem": 7.5
+  },
+  "faculdade": {
+    "casa": 10.0
+  },
+  "garagem": {
+    "ponto_B": 8.1,
+    "ponto_C": 7.5,
+    "ponto_A": 5.2
+  },
+  "ponto_B": {
+    "ponto_C": 4.4,
+    "garagem": 8.1,
+    "ponto_A": 3.0
+  },
+  "predou": {
+    "predo": 456.0
+  },
+  "casa": {
+    "faculdade": 10.0
+  }
+}

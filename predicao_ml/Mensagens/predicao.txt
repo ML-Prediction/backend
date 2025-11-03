@@ -1,0 +1,17 @@
+=== Relatório de Predição ===
+Timestamp: 2025-11-01T18:16:24.711388300+00:00
+Modelo: ModeloSimuladoReciclagem
+Tipo: plastico, Quantidade: 23.000 kg, Impacto: 27.600
+Tipo: metal, Quantidade: 123.000 kg, Impacto: 147.600
+Tipo: vidro, Quantidade: 345.000 kg, Impacto: 414.000
+Tipo: plastico, Quantidade: 1234.000 kg, Impacto: 1480.800
+Tipo: papel, Quantidade: 2.000 kg, Impacto: 2.400
+Tipo: plastico, Quantidade: 123.000 kg, Impacto: 147.600
+Tipo: vidro, Quantidade: 12.000 kg, Impacto: 14.400
+Tipo: vidro, Quantidade: 34.000 kg, Impacto: 40.800
+Tipo: metal, Quantidade: 2345.000 kg, Impacto: 2814.000
+Tipo: plastico, Quantidade: 20.000 kg, Impacto: 24.000
+Tipo: papel, Quantidade: 50.000 kg, Impacto: 60.000
+Tipo: papel, Quantidade: 10.000 kg, Impacto: 12.000
+Tipo: plastico, Quantidade: 20.000 kg, Impacto: 24.000
+Impacto total estimado: 5209.200
