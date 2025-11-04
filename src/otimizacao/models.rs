@@ -39,20 +39,20 @@ pub(crate) struct ResultadoRotaInterna {
 
 // --- Structs de Pedido (Públicas) ---
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct PedidoOtimizacao {
     pub garagem_id: String,
     pub pontos_a_visitar: Vec<String>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Clone)]
 pub struct PedidoNovaDistancia {
    pub origem: String,
    pub destino: String,
    pub custo: f64,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct DadosPrevisao {
     pub ponto_id: String,
     pub regiao: String,

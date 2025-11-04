@@ -77,6 +77,66 @@
       "quantidade": 20.0,
       "observacoes": null,
       "timestamp": "2025-11-01T18:16:24.707608100Z"
+    },
+    {
+      "tipo": "papel",
+      "quantidade": 30.0,
+      "observacoes": "aaaa",
+      "timestamp": "2025-11-04T01:12:49.486954Z"
+    },
+    {
+      "tipo": "plastico",
+      "quantidade": 200.0,
+      "observacoes": "Coleta em área residencial",
+      "timestamp": "2025-11-04T02:30:56.630567Z"
+    },
+    {
+      "tipo": "plastico",
+      "quantidade": 150.5,
+      "observacoes": "Coleta realizada na região central",
+      "timestamp": "2025-11-04T02:31:30.898463Z"
+    },
+    {
+      "tipo": "plastico",
+      "quantidade": 10000.5,
+      "observacoes": "Coleta realizada na região central",
+      "timestamp": "2025-11-04T02:31:43.398931Z"
+    },
+    {
+      "tipo": "organico",
+      "quantidade": 12345.0,
+      "observacoes": "lool",
+      "timestamp": "2025-11-04T02:58:02.466041Z"
+    },
+    {
+      "tipo": "metal",
+      "quantidade": 178.0,
+      "observacoes": "pesadão",
+      "timestamp": "2025-11-04T02:58:45.192138Z"
+    },
+    {
+      "tipo": "vidro",
+      "quantidade": 10.0,
+      "observacoes": "teste",
+      "timestamp": "2025-11-04T03:18:07.595122Z"
+    },
+    {
+      "tipo": "plastico",
+      "quantidade": 100.0,
+      "observacoes": null,
+      "timestamp": "2025-11-04T03:18:30.555212Z"
+    },
+    {
+      "tipo": "vidro",
+      "quantidade": 155.0,
+      "observacoes": "ppppppp",
+      "timestamp": "2025-11-04T03:37:09.414848Z"
+    },
+    {
+      "tipo": "vidro",
+      "quantidade": 400.0,
+      "observacoes": null,
+      "timestamp": "2025-11-04T03:37:27.900804Z"
     }
   ]
 }

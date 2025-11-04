@@ -4,7 +4,7 @@ use std::error::Error;
 use std::fs::{create_dir_all, File};
 use std::io::Write;
 
-#[derive(Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Predicao {
     pub tipos_lixo: Vec<String>,
     pub quantidades: Vec<f32>,

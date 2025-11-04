@@ -42,6 +42,7 @@ impl TryFrom<&str> for PerfilUsuario {
     }
 }
 
+#[derive(Clone)]
 pub struct Usuario {
     pub id: u32,
     pub nome: String,

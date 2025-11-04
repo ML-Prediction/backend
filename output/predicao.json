@@ -12,7 +12,17 @@
     "plastico",
     "papel",
     "papel",
-    "plastico"
+    "plastico",
+    "papel",
+    "plastico",
+    "plastico",
+    "plastico",
+    "organico",
+    "metal",
+    "vidro",
+    "plastico",
+    "vidro",
+    "vidro"
   ],
   "quantidades": [
     23.0,
@@ -27,7 +37,17 @@
     20.0,
     50.0,
     10.0,
-    20.0
+    20.0,
+    30.0,
+    200.0,
+    150.5,
+    10000.5,
+    12345.0,
+    178.0,
+    10.0,
+    100.0,
+    155.0,
+    400.0
   ],
   "resultados": [
     27.6,
@@ -42,9 +62,19 @@
     24.0,
     60.000004,
     12.0,
-    24.0
+    24.0,
+    36.0,
+    240.00002,
+    180.6,
+    12000.601,
+    14814.001,
+    213.6,
+    12.0,
+    120.00001,
+    186.0,
+    480.00003
   ],
-  "impacto_total": 5209.2,
-  "timestamp": "2025-11-01T18:16:24.711388300+00:00",
+  "impacto_total": 33492.004,
+  "timestamp": "2025-11-04T03:37:27.901713+00:00",
   "modelo": "ModeloSimuladoReciclagem"
 }

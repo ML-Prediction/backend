@@ -3,7 +3,7 @@ use crate::predicoes_module;
 use crate::otimizacao;
 use crate::dataset::Dataset; 
 use std::path::Path;
-use crate::otimizacao::{EstadoOtimizacao, PedidoOtimizacao};
+use crate::otimizacao::PedidoOtimizacao;
 use serde_json;
 
 pub async fn inserir_dados_coleta(

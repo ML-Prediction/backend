@@ -6,6 +6,7 @@ mod predicao;
 mod ia_api; // Módulo da IA (Gemini)
 mod predicoes_module; // Hub da IA
 pub mod otimizacao; // Módulo de Otimização (com 'pub')
+mod api; // Módulo da API REST
 
 use auth::{Usuario, PerfilUsuario};
 use actions::{
@@ -373,47 +374,35 @@ fn delete_user(conn: &Connection, admin_id: u32) -> Result<(), Box<dyn Error>> {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    
+    // Inicializar logging
+    tracing_subscriber::fmt::init();
 
     dotenv::dotenv().ok();
 
     let conn = Connection::open(DB_FILE)?;
-    println!("Base de dados '{}' carregada.", DB_FILE);
+    println!("✅ Base de dados '{}' carregada.", DB_FILE);
     
     init_db(&conn)?;
+    println!("✅ Banco de dados inicializado.");
 
+    let estado_otimizacao = std::sync::Arc::new(otimizacao::EstadoOtimizacao::new());
 
-    let estado_otimizacao = otimizacao::EstadoOtimizacao::new();
+    // Criar router (sem necessidade de secret JWT)
+    let app = api::routes::create_router(conn, estado_otimizacao, "".to_string());
 
-    loop {
-        println!("\n--- Sistema de Gestão de Resíduos ---");
-        println!("[1] Fazer Login");
-        println!("[2] Criar Novo Usuário");
-        println!("[3] Sair do Programa");
-        
-        let escolha = get_input("Sua escolha: ");
-        
-        match escolha.as_str() {
-            "1" => {
-                match handle_login(&conn) {
-                    Ok(Some(usuario_logado)) => {
-                        show_app_menu(&usuario_logado, &conn, &estado_otimizacao).await;
-                    }
-                    Ok(None) => continue,
-                    Err(e) => println!("Erro crítico no login: {}", e),
-                }
-            }
-            "2" => {
-                if let Err(e) = handle_create_user(&conn) {
-                    println!("Erro ao criar usuário: {}", e);
-                }
-            }
-            "3" => {
-                println!("Saindo...");
-                break;
-            }
-            _ => println!("❌ Opção inválida, tente novamente."),
-        }
-    }
+    // Iniciar servidor
+    let port = std::env::var("PORT")
+        .unwrap_or_else(|_| "8000".to_string())
+        .parse::<u16>()
+        .unwrap_or(8000);
+
+    let addr = format!("0.0.0.0:{}", port);
+    println!("🚀 Servidor iniciando em http://{}", addr);
+    println!("📚 API disponível em http://localhost:{}/api", port);
+    println!("🏥 Health check: http://localhost:{}/health", port);
+
+    let listener = tokio::net::TcpListener::bind(&addr).await?;
+    axum::serve(listener, app.into_make_service()).await?;
+
     Ok(())
 } 
