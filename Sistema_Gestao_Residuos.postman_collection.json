@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "sistema-gestao-residuos-simples",
+		"name": "Sistema de Gestão de Resíduos - API Simplificada",
+		"description": "Coleção completa para testar a API do Sistema de Gestão de Resíduos com autenticação simplificada (sem tokens)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Autentica um usuário no sistema. Retorna informações do usuário."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Usuário (Admin)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\",\n    \"novo_usuario\": {\n        \"nome\": \"novo_usuario\",\n        \"senha\": \"senha123\",\n        \"perfil\": \"Comum\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/usuarios",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"auth",
+								"usuarios"
+							]
+						},
+						"description": "Cria um novo usuário. Requer perfil Administrador."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints de autenticação e gerenciamento de usuários"
+		},
+		{
+			"name": "Coleta de Dados",
+			"item": [
+				{
+					"name": "Inserir Dados de Coleta",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\",\n    \"tipo\": \"plastico\",\n    \"quantidade\": 150.5,\n    \"observacoes\": \"Coleta realizada na região central\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/coleta",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"coleta"
+							]
+						},
+						"description": "Insere dados de coleta de resíduos. Requer perfil Comum, Técnico ou Administrador."
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Dados de Coleta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/coleta?tipo=plastico&limit=10&offset=0",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"coleta"
+							],
+							"query": [
+								{
+									"key": "tipo",
+									"value": "plastico",
+									"description": "Filtrar por tipo de resíduo (opcional)"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Número máximo de registros (opcional)"
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "Número de registros a pular (opcional)"
+								}
+							]
+						},
+						"description": "Lista todos os dados de coleta. Pode filtrar por tipo e usar paginação."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para gerenciamento de dados de coleta"
+		},
+		{
+			"name": "Pré-processamento",
+			"item": [
+				{
+					"name": "Executar Pré-processamento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/preprocessamento/executar",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"preprocessamento",
+								"executar"
+							]
+						},
+						"description": "Executa o pré-processamento dos dados. Requer perfil Técnico ou Administrador."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints relacionados ao pré-processamento de dados"
+		},
+		{
+			"name": "Predições (IA)",
+			"item": [
+				{
+					"name": "Executar Predição",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\",\n    \"tipo\": \"plastico\",\n    \"quantidade\": 200.0,\n    \"observacoes\": \"Coleta em área residencial\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/predicoes",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"predicoes"
+							]
+						},
+						"description": "Executa uma predição usando IA (Gemini). Requer perfil Técnico ou Administrador."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints relacionados ao módulo de predições com IA"
+		},
+		{
+			"name": "Otimização de Rotas",
+			"item": [
+				{
+					"name": "Otimizar Rota",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\",\n    \"pedido\": {\n        \"garagem_id\": \"garagem\",\n        \"pontos_a_visitar\": [\n            \"ponto_A\",\n            \"ponto_B\",\n            \"ponto_C\"\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/otimizacao/rotas",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"otimizacao",
+								"rotas"
+							]
+						},
+						"description": "Otimiza uma rota de coleta usando algoritmos de vizinho mais próximo e por prioridade. Requer perfil Técnico ou Administrador."
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Distância",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\",\n    \"distancia\": {\n        \"origem\": \"garagem\",\n        \"destino\": \"ponto_D\",\n        \"custo\": 12.5\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/otimizacao/distancias",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"otimizacao",
+								"distancias"
+							]
+						},
+						"description": "Adiciona ou atualiza uma distância entre dois pontos. Requer perfil Técnico ou Administrador."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Previsão de Demanda",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\",\n    \"previsao\": {\n        \"ponto_id\": \"ponto_A\",\n        \"regiao\": \"centro\",\n        \"previsao_demanda\": 250.5\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/otimizacao/previsao-demanda",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"otimizacao",
+								"previsao-demanda"
+							]
+						},
+						"description": "Atualiza a previsão de demanda para um ponto específico. Requer perfil Técnico ou Administrador."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints relacionados à otimização de rotas de coleta"
+		},
+		{
+			"name": "Gerenciamento de Usuários",
+			"item": [
+				{
+					"name": "Listar Usuários",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"usuarios"
+							]
+						},
+						"description": "Lista todos os usuários do sistema. Requer perfil Administrador."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"admin\",\n    \"senha\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/:id",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"usuarios",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2",
+									"description": "ID do usuário a deletar"
+								}
+							]
+						},
+						"description": "Deleta um usuário do sistema. Requer perfil Administrador. Não é possível deletar a si mesmo."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para gerenciamento de usuários (apenas Administrador)"
+		},
+		{
+			"name": "Health e Status",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/health",
+							"host": [
+								"http://localhost:8080"
+							],
+							"path": [
+								"health"
+							]
+						},
+						"description": "Verifica se a API está funcionando. Não requer autenticação."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints de verificação de saúde e status do sistema"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": []
+}
+
